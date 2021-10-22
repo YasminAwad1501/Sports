@@ -6,7 +6,21 @@
     android:layout_height="match_parent"
     android:background="#b3f0ff"
     android:orientation="vertical"
-    tools:context=".Sports">
+    tools:context=".SportsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:height="50dp"
+        android:fontFamily="@font/abril_fatface"
+        android:text="SPORTS"
+        android:textSize="35dp"
+        android:textColor="@color/cardview_dark_background"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        tools:text="SPORTS" />
+
+
 
 
 
