@@ -9,6 +9,13 @@
     android:orientation="vertical"
     >
 
+    <resources>
+    <color name="colorPrimary">#3d93d9</color>
+
+    </resources>
+
+
+
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="wrap_content"
