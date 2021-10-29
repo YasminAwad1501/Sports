@@ -5,14 +5,28 @@
     tools:context=".LogInActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b3f0ff"
+
     android:orientation="vertical"
     >
 
-    <resources>
-    <color name="colorPrimary">#3d93d9</color>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="150dp"
+       android:id="@+id/rlHeader">
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/logo"
+           android:padding="10dp"/>
+   </RelativeLayout>
 
-    </resources>
+    <RelativeLayout
+        android:layout_marginTop="@id/rlHeader"
+        android:layout_width="220dp"
+        android:layout_height="480dp"
+        android:background="@color/color_pink"/>
+
+
 
 
 
