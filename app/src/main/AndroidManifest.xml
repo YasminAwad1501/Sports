@@ -12,12 +12,7 @@
         <activity
             android:name=".ListViewSports"
             android:exported="true" />
-        <activity
-            android:name=".SportType"
-            android:exported="true" />
-        <activity
-            android:name=".ListActivity"
-            android:exported="true" />
+
         <activity
             android:name=".FavoriteActivity"
             android:exported="true" />

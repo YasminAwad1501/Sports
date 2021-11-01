@@ -24,10 +24,7 @@
         android:layout_marginTop="@id/rlHeader"
         android:layout_width="220dp"
         android:layout_height="480dp"
-        android:background="@color/color_pink"/>
-
-
-
+        android:background="@drawable/shape_left_panel"/>
 
 
     <Button

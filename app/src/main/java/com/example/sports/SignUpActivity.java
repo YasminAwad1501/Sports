@@ -29,13 +29,11 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void Signup(View view) {
-        Intent intent = new Intent(this, SportsActivity.class);
-        startActivity(intent);
-    }
+
 
     public void signup(String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -67,4 +65,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    public void Signup(View view) {
+        Intent intent = new Intent(this, LogInActivity.class);
+        startActivity(intent);
+
+    }
 }
