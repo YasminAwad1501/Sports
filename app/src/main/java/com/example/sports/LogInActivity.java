@@ -24,7 +24,7 @@ public class LogInActivity extends AppCompatActivity  {
     private static final String TAG = "FIREBASE";
     //declaring all
     private EditText editTextUsername, editTextPassword;
-    private Button buttonLogIn, buttonSignUp;
+    private Button buttonLogIn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,8 +33,13 @@ public class LogInActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_log_in);
         //returns reference to the instance of the project Firebase
         mAuth = FirebaseAuth.getInstance();
+        buttonLogIn = findViewById(R.id.buttonLogin);
+        editTextUsername = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
+
 
     }
+
 
     public void login(View view) {
         if (!editTextUsername.getText().toString().equals(""))
@@ -74,7 +79,7 @@ public class LogInActivity extends AppCompatActivity  {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(LogInActivity.this, SportsActivity.class);
+                            Intent i = new Intent(LogInActivity.this, SignUpActivity.class);
                             startActivity(i);
 
                         } else {
