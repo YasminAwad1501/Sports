@@ -1,6 +1,7 @@
 package com.example.sports;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class SportsActivity extends AppCompatActivity  {
@@ -17,6 +19,14 @@ public class SportsActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
 
+
+    }
+
+
+    public void Profile(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
 
     }
 
@@ -43,7 +53,7 @@ public class SportsActivity extends AppCompatActivity  {
 
         switch (item.getItemId()){
             case R.id.settingsMenu:
-                Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent (this, FavoriteActivity.class);
                 startActivity(intent);
                 break;
@@ -53,6 +63,34 @@ public class SportsActivity extends AppCompatActivity  {
                 break;
         }
         return super.onOptionsItemSelected(item);
+
+
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setMessage("ARE YOU SURE?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("yes", (DialogInterface.OnClickListener) this);
+        builder.setNegativeButton("No", (DialogInterface.OnClickListener) this);
+        AlertDialog dialog=builder.create();
+        dialog.show();
+    }
+
+
+    public void onClick(DialogInterface dialogInterface, int i) {
+        if (i== dialogInterface.BUTTON_POSITIVE)
+        {
+            super.onBackPressed();
+            dialogInterface.cancel();
+        }
+        if (i== dialogInterface.BUTTON_NEGATIVE)
+        {
+            dialogInterface.cancel();
+        }
     }
 
 
