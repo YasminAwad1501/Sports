@@ -28,14 +28,13 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        mAuth = FirebaseAuth.getInstance();
         editTextName=findViewById(R.id.editTextName);
         editTextUsername=findViewById(R.id.editTextEmail);
         editTextPassword=findViewById(R.id.editTextPassword);
         editTextPhoneNumber=findViewById(R.id.editTextPhone);
         buttonSignUp=findViewById(R.id.buttonLogin);
 
-
+        mAuth = FirebaseAuth.getInstance();
     }
 
 
@@ -66,13 +65,12 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void submit(View view){
-        Signup(editTextUsername.getText().toString(), editTextPassword.getText().toString());
+
     }
 
 
     public void Signup(View view) {
-        Intent intent = new Intent(this, LogInActivity.class);
-        startActivity(intent);
+        Signup(editTextUsername.getText().toString(), editTextPassword.getText().toString());
 
     }
 }
