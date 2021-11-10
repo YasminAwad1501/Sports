@@ -10,17 +10,28 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class SportsActivity extends AppCompatActivity  {
+
+    private Button buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
 
+        buttonBack=findViewById(R.id.buttonBack);
+
 
     }
+
+    public void back(View view){
+        Intent intent = new Intent (this, LogInActivity.class);
+        startActivity(intent);
+    }
+
 
 
     public void Profile(View view) {
@@ -92,6 +103,7 @@ public class SportsActivity extends AppCompatActivity  {
             dialogInterface.cancel();
         }
     }
+
 
 
 
