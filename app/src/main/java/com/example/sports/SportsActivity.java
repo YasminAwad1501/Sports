@@ -13,24 +13,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SportsActivity extends AppCompatActivity  {
+public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener
+{
 
-    private Button buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
 
-        buttonBack=findViewById(R.id.buttonBack);
+
 
 
     }
 
-    public void back(View view){
-        Intent intent = new Intent (this, LogInActivity.class);
-        startActivity(intent);
-    }
 
 
 
@@ -85,13 +81,13 @@ public class SportsActivity extends AppCompatActivity  {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setMessage("ARE YOU SURE?");
         builder.setCancelable(false);
-        builder.setPositiveButton("yes", (DialogInterface.OnClickListener) this);
-        builder.setNegativeButton("No", (DialogInterface.OnClickListener) this);
+        builder.setPositiveButton("yes",this);
+        builder.setNegativeButton("No",this);
         AlertDialog dialog=builder.create();
         dialog.show();
     }
 
-
+    @Override
     public void onClick(DialogInterface dialogInterface, int i) {
         if (i== dialogInterface.BUTTON_POSITIVE)
         {
