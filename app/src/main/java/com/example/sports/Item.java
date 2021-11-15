@@ -1,47 +1,45 @@
 package com.example.sports;
 
 public class Item {
-    private String description;
-    private int resid; //image id to be loaded
-    private boolean isHappy;
-    private int amount;
+    private String name, location, days;
+    private int hours;
 
     public Item(String description, int resid, boolean isHappy, int amount) {
-        this.description = description;
-        this.resid = resid;
-        this.isHappy = isHappy;
-        this.amount = amount;
+        this.name = name;
+        this.location = location;
+        this.days = days;
+        this.hours = hours;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getResid() {
-        return resid;
+    public String getLocation() {
+        return location;
     }
 
-    public void setResid(int resid) {
-        this.resid = resid;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public boolean isHappy() {
-        return isHappy;
+    public String getDays() {
+        return days;
     }
 
-    public void setHappy(boolean happy) {
-        isHappy = happy;
+    public void setDays(String days) {
+        this.days = days;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getHours() {
+        return hours;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setHours(int hours) {
+        this.hours = hours;
     }
 }
