@@ -47,11 +47,10 @@ public class CustomAdapter extends ArrayAdapter<Item> {
                 }
             });
 
-            imageView.setImageResource(item.getResid());
-            textName.setText(item.getDescription());
-            textLocation.setText(item.getDescription());
-            textDays.setText(item.getDescription());
-            textHours.setText(item.getDescription());
+            textName.setText(item.getName());
+            textLocation.setText(item.getLocation());
+            textDays.setText(item.getDays());
+            textHours.setText(item.getHours());
 
         }
         return view;

@@ -26,9 +26,9 @@ public class ListViewSports extends AppCompatActivity {
         setContentView(R.layout.activity_list_view_sports);
 
         list = new ArrayList<>();
-        list.add(new Item("this is my first Item", R.drawable.basketball, true, 50));
-        list.add(new Item("this is my second Item", R.drawable.boxing, true, 60));
-        list.add(new Item("this is my third Item", R.drawable.swimming, true, 50));
+        list.add(new Item("first Item", "haifa", "monday - friday", "8-23"));
+        list.add(new Item("second Item", "haifa", "monday - friday", "8-23"));
+        list.add(new Item("third Item", "haifa", "monday - friday", "8-23"));
 
 
 

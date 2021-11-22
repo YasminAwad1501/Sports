@@ -26,6 +26,7 @@ public class LogInActivity extends AppCompatActivity  {
     private EditText editTextUsername, editTextPassword;
     private Button buttonLogIn;
     private FirebaseAuth mAuth;
+    private Intent musicIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,11 @@ public class LogInActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_log_in);
         //returns reference to the instance of the project Firebase
         mAuth = FirebaseAuth.getInstance();
+
+        //this wiill start the service which in turn will the music
+        musicIntent = new Intent(this, MusicService.class);
+        startService(musicIntent);
+
         buttonLogIn = findViewById(R.id.buttonLogin);
         editTextUsername = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);

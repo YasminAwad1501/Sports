@@ -1,10 +1,12 @@
 package com.example.sports;
 
-public class Item {
-    private String name, location, days;
-    private int hours;
+import java.time.LocalTime;
 
-    public Item(String description, int resid, boolean isHappy, int amount) {
+public class Item {
+    private String name, location, days, hours;
+
+    public Item(String name, String location, String days, String hours) {
+
         this.name = name;
         this.location = location;
         this.days = days;
@@ -35,11 +37,11 @@ public class Item {
         this.days = days;
     }
 
-    public int getHours() {
+    public String getHours() {
         return hours;
     }
 
-    public void setHours(int hours) {
+    public void setHours(String hours) {
         this.hours = hours;
     }
 }
