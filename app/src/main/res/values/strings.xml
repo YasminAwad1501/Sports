@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Sports</string>
+    <string name="sport">Sport</string>
+    <string name="title_place_holder">title place holdar</string>
 </resources>
