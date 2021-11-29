@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ListViewSports extends AppCompatActivity {
+public class LatestSearch extends AppCompatActivity {
 
     //the object of the view - design
     private ListView myListView;
@@ -27,7 +27,7 @@ public class ListViewSports extends AppCompatActivity {
 
         list = new ArrayList<>();
         list.add(new Item("first Item", "haifa", "monday - friday", "8-23"));
-        list.add(new Item("second Item", "haifa", "monday - friday", "8-23"));
+        list.add(new Item("second Item", "haifa", "monday - friday", "8:00 - 23:00"));
         list.add(new Item("third Item", "haifa", "monday - friday", "1"));
 
 

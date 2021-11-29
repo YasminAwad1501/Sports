@@ -12,9 +12,9 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
 
     <item
-        android:id="@+id/settingsMenu"
+        android:id="@+id/favorite"
         android:title="Favorite" />
     <item
-        android:id="@+id/exitMenu"
+        android:id="@+id/latestSearch"
         android:title="Latest Search" />
 </menu>

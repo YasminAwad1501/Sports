@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener
@@ -68,14 +67,16 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
         switch (item.getItemId()){
-            case R.id.settingsMenu:
+            case R.id.favorite:
                 Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent (this, FavoriteActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent (this, FavoriteActivity.class);
+                startActivity(intent1);
                 break;
 
-            case R.id.exitMenu:
-                // closeApplication();
+            case R.id.latestSearch:
+                Toast.makeText(this, "LatestSearch", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent (this, FavoriteActivity.class);
+                startActivity(intent2);
                 break;
         }
         return super.onOptionsItemSelected(item);
