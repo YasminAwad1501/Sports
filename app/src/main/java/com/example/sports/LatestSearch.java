@@ -23,7 +23,7 @@ public class LatestSearch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view_sports);
+        setContentView(R.layout.activity_latest_search);
 
         list = new ArrayList<>();
         list.add(new Item("first Item", "haifa", "monday - friday", "8-23"));

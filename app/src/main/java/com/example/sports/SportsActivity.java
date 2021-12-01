@@ -15,11 +15,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener
 {
 
 
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
+
+    private RecyclerView mRecycleView;
+    private List<String> titles;
+    private List<Integer> mImages;
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,37 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
                 1000 * 60 * 2, pendingIntent);
 
+
+        mRecycleView = findViewById(R.id.recycleview);
+
+        titles = new ArrayList<>();
+        mImages = new ArrayList<>();
+
+        adapter=new MyAdapter(this, titles, mImages);
+
+        mImages.add(R.drawable.running);
+        mImages.add(R.drawable.boxing);
+        mImages.add(R.drawable.basketball);
+        mImages.add(R.drawable.skiing);
+        mImages.add(R.drawable.soccer);
+        mImages.add(R.drawable.surfing);
+        mImages.add(R.drawable.swimming);
+        mImages.add(R.drawable.tennis);
+
+        titles.add("Running");
+        titles.add("Boxing");
+        titles.add("BasketBall");
+        titles.add("Skiing");
+        titles.add("Soccer");
+        titles.add("Surfing");
+        titles.add("Swimming");
+        titles.add("Tennis");
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
+        mRecycleView.setLayoutManager(gridLayoutManager);
+        mRecycleView.setHasFixedSize(true);
+
+        mRecycleView.setAdapter(adapter);
 
 
 

@@ -7,7 +7,28 @@
     android:orientation="vertical"
     tools:context=".LatestSearch">
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/shape_top_panel"
+        />
 
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            android:src="@drawable/logo" />
+    </RelativeLayout>
     <ListView
         android:id="@+id/myListView"
         android:layout_width="match_parent"

@@ -19,10 +19,6 @@
             android:name=".NotificationIntentService"
             android:exported="false" />
 
-        <activity
-            android:name=".SportsActivity2"
-            android:exported="true" />
-
         <service
             android:name=".MusicService"
             android:enabled="true"
