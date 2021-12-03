@@ -32,10 +32,11 @@ public class LogInActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
         //returns reference to the instance of the project Firebase
         mAuth = FirebaseAuth.getInstance();
 
-        //this wiill start the service which in turn will the music
+        //this will start the service which in turn will the music
         musicIntent = new Intent(this, MusicService.class);
         startService(musicIntent);
 
