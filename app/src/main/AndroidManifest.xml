@@ -18,7 +18,6 @@
         <service
             android:name=".NotificationIntentService"
             android:exported="false" />
-
         <service
             android:name=".MusicService"
             android:enabled="true"

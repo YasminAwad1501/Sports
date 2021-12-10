@@ -12,7 +12,7 @@ public class Item {
         this.days = days;
         this.hours = hours;
     }
-
+    public Item(){}
     public String getName() {
         return name;
     }
@@ -44,4 +44,8 @@ public class Item {
     public void setHours(String hours) {
         this.hours = hours;
     }
+
+
 }
+
+

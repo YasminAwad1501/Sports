@@ -1,6 +1,7 @@
 package com.example.sports;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             mTextview = itemView.findViewById(R.id.textview);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
-                    Toast.makeText(itemView.getContext(), "CLICKED", Toast.LENGTH_LONG).show();
+                    Toast.makeText(itemView.getContext(), "CLICKED:"+mTextview.getText(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(itemView.getContext(), ListViewSports.class);
+                    intent.putExtra("category",mTextview.getText());
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }

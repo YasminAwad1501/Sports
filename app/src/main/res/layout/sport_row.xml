@@ -70,7 +70,8 @@
             android:onClick="Signup"
             android:text="More"
             android:textColor="@android:color/white"
-            android:textSize="10dp" />
+            android:textSize="10dp"
+            />
 
     </LinearLayout>
 </LinearLayout>

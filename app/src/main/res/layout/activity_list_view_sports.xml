@@ -26,12 +26,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="BASKETBALL"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-black"/>
+            android:id="@+id/category"/>
     </RelativeLayout>
     <ListView
         android:id="@+id/myListView"

@@ -78,6 +78,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
 
 
+
     }
 
 
@@ -155,8 +156,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
 
     public void List(View view) {
-        Intent intent = new Intent(this, ListViewSports.class);
-        startActivity(intent);
+
 
     }
 
