@@ -1,8 +1,9 @@
 package com.example.sports;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
-public class Item {
+public class Item implements Serializable {
     private String name, location, days, hours;
 
     public Item(String name, String location, String days, String hours) {

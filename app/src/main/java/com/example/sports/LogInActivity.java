@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,10 +29,15 @@ public class LogInActivity extends AppCompatActivity  {
     private FirebaseAuth mAuth;
     private Intent musicIntent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
+        String email = sp.getString("email","");
+        String password = sp.getString("password","");
 
         //returns reference to the instance of the project Firebase
         mAuth = FirebaseAuth.getInstance();
@@ -46,6 +52,9 @@ public class LogInActivity extends AppCompatActivity  {
 
 
     }
+
+
+
 
 
     public void login(View view) {

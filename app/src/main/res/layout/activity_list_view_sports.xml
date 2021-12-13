@@ -34,6 +34,7 @@
             android:textStyle="bold"
             android:id="@+id/category"/>
     </RelativeLayout>
+
     <ListView
         android:id="@+id/myListView"
         android:layout_width="match_parent"
