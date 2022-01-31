@@ -65,7 +65,7 @@
             android:layout_width="50dp"
             android:layout_height="20dp"
             android:layout_gravity="bottom"
-            android:layout_marginStart="25dp"
+
             android:layout_marginBottom="4dp"
             android:background="@drawable/shape_login_button"
             android:onClick="Signup"

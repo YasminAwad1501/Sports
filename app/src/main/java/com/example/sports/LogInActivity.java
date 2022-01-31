@@ -35,10 +35,6 @@ public class LogInActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
-        String email = sp.getString("email","");
-        String password = sp.getString("password","");
-
         //returns reference to the instance of the project Firebase
         mAuth = FirebaseAuth.getInstance();
 
@@ -50,6 +46,13 @@ public class LogInActivity extends AppCompatActivity  {
         editTextUsername = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
+        SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
+        String email = sp.getString("email","");
+        String password = sp.getString("password","");
+        if (!email.equals("") && !password.equals("")){
+            editTextUsername.setText(email);
+            editTextPassword.setText(password);
+        }
 
     }
 

@@ -122,6 +122,8 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
                 Intent intent2 = new Intent (this, FavoriteActivity.class);
                 startActivity(intent2);
                 break;
+            case R.id.itemProfile:
+
         }
         return super.onOptionsItemSelected(item);
 

@@ -43,18 +43,7 @@
         tools:layout_editor_absoluteX="38dp"
         tools:layout_editor_absoluteY="547dp"/>
 
-    <Button
-        android:id="@+id/buttonList"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:background="@drawable/shape_login_button"
-        android:onClick="List"
-        android:text="List"
-        android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="547dp"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview"

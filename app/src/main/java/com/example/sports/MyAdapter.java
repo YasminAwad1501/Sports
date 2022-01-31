@@ -25,6 +25,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.titles=titles;
         this.images=images;
 
+
     }
 
 
@@ -55,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
 
-            mImageView = itemView.findViewById(R.id.imageview);
+            mImageView = itemView.findViewById(R.id.mImageView);
 
             mTextview = itemView.findViewById(R.id.textview);
             itemView.setOnClickListener(new View.OnClickListener() {
