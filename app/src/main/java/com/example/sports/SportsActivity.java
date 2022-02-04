@@ -21,8 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener
-{
+public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener {
 
 
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
@@ -36,11 +35,11 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
-        Intent notifyIntent = new Intent(this,NotificationReceiver.class);
+        Intent notifyIntent = new Intent(this, NotificationReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast
                 (this, NOTIFICATION_REMINDER_NIGHT, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
                 1000 * 60 * 2, pendingIntent);
 
 
@@ -49,7 +48,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         titles = new ArrayList<>();
         mImages = new ArrayList<>();
 
-        adapter=new MyAdapter(this, titles, mImages);
+        adapter = new MyAdapter(this, titles, mImages);
 
         mImages.add(R.drawable.running);
         mImages.add(R.drawable.boxing);
@@ -76,9 +75,6 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         mRecycleView.setAdapter(adapter);
 
 
-
-
-
     }
 
 
@@ -94,7 +90,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
 
-        MenuItem.OnActionExpandListener onActionExpandListener=new MenuItem.OnActionExpandListener() {
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
                 return false;
@@ -108,18 +104,19 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         };
         return super.onCreateOptionsMenu(menu);
     }
-    public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
-        switch (item.getItemId()){
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
             case R.id.favorite:
                 Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
-                Intent intent1 = new Intent (this, FavoriteActivity.class);
+                Intent intent1 = new Intent(this, FavoriteActivity.class);
                 startActivity(intent1);
                 break;
 
             case R.id.latestSearch:
                 Toast.makeText(this, "LatestSearch", Toast.LENGTH_SHORT).show();
-                Intent intent2 = new Intent (this, FavoriteActivity.class);
+                Intent intent2 = new Intent(this, FavoriteActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.itemProfile:
@@ -131,35 +128,30 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
     }
 
 
-
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("ARE YOU SURE?");
         builder.setCancelable(false);
-        builder.setPositiveButton("yes",this);
-        builder.setNegativeButton("No",this);
-        AlertDialog dialog=builder.create();
+        builder.setPositiveButton("yes", this);
+        builder.setNegativeButton("No", this);
+        AlertDialog dialog = builder.create();
         dialog.show();
     }
 
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
-        if (i== dialogInterface.BUTTON_POSITIVE)
-        {
+        if (i == dialogInterface.BUTTON_POSITIVE) {
             super.onBackPressed();
             dialogInterface.cancel();
         }
-        if (i== dialogInterface.BUTTON_NEGATIVE)
-        {
+        if (i == dialogInterface.BUTTON_NEGATIVE) {
             dialogInterface.cancel();
         }
     }
 
 
     public void List(View view) {
-
-
     }
 
 }

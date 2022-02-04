@@ -51,17 +51,20 @@ public class ListViewSports extends AppCompatActivity {
         String category = getIntent().getStringExtra("category");
         categoryTV.setText(category);
         myRef = database.getReference(category);
-
+/*
         list = new ArrayList<>();
-      /*  list.add(new Item("first Item", "haifa", "monday - friday", "8-23"));
-        list.add(new Item("second Item", "haifa", "monday - friday", "8-23"));
-        list.add(new Item("third Item", "haifa", "monday - friday", "1"));
+        list.add(new Item("Dubai's tennis", "Dubai", "Weekdays", "8:00 - 18:00", R.drawable.tennisdubai));
+        list.add(new Item("Tennis courts", "Holland", "Monday - Saturday", "05:30 - 23:00", R.drawable.tennisholand));
+        list.add(new Item("Tennis's place", "India", "Weekdays", "6:00 - 00:00", R.drawable.tennisindia));
+        list.add(new Item("Courts", "Israel", "Sunday - Friday", "4:30 - 19:00", R.drawable.tennisisrael));
+
+
+        myRef.push().setValue(new Item("Dubai's tennis", "Dubai", "Weekdays", "8:00 - 18:00", R.drawable.tennisdubai));
+        myRef.push().setValue(new Item("Tennis courts", "Holland", "Monday - Saturday", "05:30 - 23:00", R.drawable.tennisholand));
+        myRef.push().setValue(new Item("Tennis's place", "India", "Weekdays", "6:00 - 00:00", R.drawable.tennisindia));
+        myRef.push().setValue(new Item("Courts", "Israel", "Sunday - Friday", "4:30 - 19:00", R.drawable.tennisisrael));
 */
 
-    /*    myRef.push().setValue(new Item("second Item", "haifa", "monday - friday", "8-23"));
-        myRef.push().setValue(new Item("second Item", "haifa", "monday - friday", "8-23"));
-        myRef.push().setValue(new Item("second Item", "haifa", "monday - friday", "8-23"));
-*/
         //reference to the list view so it can programmed
         myListView = findViewById(R.id.myListView);
 

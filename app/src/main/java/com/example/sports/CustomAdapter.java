@@ -51,7 +51,7 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             textLocation.setText(item.getLocation());
             textDays.setText(item.getDays());
             textHours.setText(item.getHours());
-
+            imageView.setImageResource(item.getImage());
         }
         return view;
     }

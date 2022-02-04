@@ -60,19 +60,22 @@
                 android:textSize="15dp" />
         </LinearLayout>
 
-        <Button
+        <ImageButton
             android:id="@+id/buttonMore"
             android:layout_width="50dp"
             android:layout_height="20dp"
-            android:layout_gravity="bottom"
-
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/shape_login_button"
-            android:onClick="Signup"
-            android:text="More"
-            android:textColor="@android:color/white"
-            android:textSize="10dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/star_icon"
             />
+
+        <ImageButton
+            android:id="@+id/buttonMassage"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/massage_icon" />
 
     </LinearLayout>
 </LinearLayout>

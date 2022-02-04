@@ -5,13 +5,15 @@ import java.time.LocalTime;
 
 public class Item implements Serializable {
     private String name, location, days, hours;
+    private int image;
 
-    public Item(String name, String location, String days, String hours) {
+    public Item(String name, String location, String days, String hours, int image) {
 
         this.name = name;
         this.location = location;
         this.days = days;
         this.hours = hours;
+        this.image = image;
     }
     public Item(){}
     public String getName() {
@@ -44,6 +46,14 @@ public class Item implements Serializable {
 
     public void setHours(String hours) {
         this.hours = hours;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 
 
