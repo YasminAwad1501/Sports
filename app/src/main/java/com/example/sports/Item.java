@@ -6,14 +6,17 @@ import java.time.LocalTime;
 public class Item implements Serializable {
     private String name, location, days, hours;
     private int image;
+    private boolean favorite;
 
-    public Item(String name, String location, String days, String hours, int image) {
+    public Item(String name, String location, String days, String hours, int image, boolean favorite) {
 
         this.name = name;
         this.location = location;
         this.days = days;
         this.hours = hours;
         this.image = image;
+        this.favorite = favorite;
+
     }
     public Item(){}
     public String getName() {
@@ -56,7 +59,13 @@ public class Item implements Serializable {
         this.image = image;
     }
 
+    public boolean isFavorite() {
+        return favorite;
+    }
 
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 }
 
 

@@ -26,9 +26,9 @@ public class FavoriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorite);
 
         list = new ArrayList<>();
-        list.add(new Item("China's Soccer", "China", "Weekdays", "8:00 - 18:00", R.drawable.soccerchina));
-        list.add(new Item("Soccer courts", "Italy", "Monday - Saturday", "05:30 - 23:00", R.drawable.socceritaly));
-        list.add(new Item("Soccer's place", "London", "Weekdays", "6:00 - 00:00", R.drawable.soccerlondon));
+        list.add(new Item("China's Soccer", "China", "Weekdays", "8:00 - 18:00", R.drawable.soccerchina, true));
+        list.add(new Item("Soccer courts", "Italy", "Monday - Saturday", "05:30 - 23:00", R.drawable.socceritaly, true));
+        list.add(new Item("Soccer's place", "London", "Weekdays", "6:00 - 00:00", R.drawable.soccerlondon, true));
 
 
 

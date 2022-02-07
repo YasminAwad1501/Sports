@@ -60,22 +60,32 @@
                 android:textSize="15dp" />
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/buttonMore"
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+            android:id="@+id/buttonFavorite"
             android:layout_width="50dp"
             android:layout_height="20dp"
             android:layout_gravity="top"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:src="@drawable/star_icon"
             />
 
-        <ImageButton
-            android:id="@+id/buttonMassage"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="4dp"
-            android:src="@drawable/massage_icon" />
+            <ImageButton
+                android:id="@+id/buttonMassage"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/massage_icon" />
 
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

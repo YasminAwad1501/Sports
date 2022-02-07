@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +40,8 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             TextView textLocation = view.findViewById(R.id.textLocation);
             TextView textDays = view.findViewById(R.id.textDays);
             TextView textHours = view.findViewById(R.id.textHours);
-            Button itemButton = view.findViewById(R.id.buttonMore);
+            ImageButton itemButton = view.findViewById(R.id.buttonFavorite);
+            ImageButton itemMassage = view.findViewById(R.id.buttonMassage);
             itemButton.setOnClickListener(new View.OnClickListener() { //to the add button
                 @Override
                 public void onClick(View view) {
@@ -52,7 +54,11 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             textDays.setText(item.getDays());
             textHours.setText(item.getHours());
             imageView.setImageResource(item.getImage());
+            itemButton.setImageResource(R.drawable.star_icon);
+            itemMassage.setImageResource(R.drawable.massage_icon);
         }
         return view;
+
+
     }
 }
