@@ -15,7 +15,7 @@ public class Item implements Serializable {
         this.days = days;
         this.hours = hours;
         this.image = image;
-        this.favorite = favorite;
+        this.favorite = false;
 
     }
     public Item(){}

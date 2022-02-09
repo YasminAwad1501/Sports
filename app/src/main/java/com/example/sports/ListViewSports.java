@@ -22,6 +22,8 @@ import java.util.ArrayList;
 
 public class ListViewSports extends AppCompatActivity {
 
+
+
     //the object of the view - design
     private ListView myListView;
     //the object for the adapter connecting the data to the view
@@ -36,6 +38,9 @@ public class ListViewSports extends AppCompatActivity {
     private FirebaseDatabase database=FirebaseDatabase.getInstance("https://sports-931b0-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference myRef;
     private TextView categoryTV;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,8 @@ public class ListViewSports extends AppCompatActivity {
         String category = getIntent().getStringExtra("category");
         categoryTV.setText(category);
         myRef = database.getReference(category);
+
+
     /*
         list = new ArrayList<>();
         list.add(new Item("Dubai's tennis", "Dubai", "Weekdays", "08:00 - 18:00", R.drawable.tennisdubai, false));

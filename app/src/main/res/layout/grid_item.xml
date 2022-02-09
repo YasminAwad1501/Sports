@@ -30,8 +30,7 @@
             <ImageView
                 android:id="@+id/mImageView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </ImageView>
+                android:layout_height="match_parent"></ImageView>
 
             <TextView
                 android:id="@+id/textview"
@@ -39,9 +38,9 @@
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginTop="115dp"
                 android:background="@color/white"
+                android:gravity="center"
                 android:text="Running"
                 android:textColor="@color/black"
                 android:textSize="15dp"
