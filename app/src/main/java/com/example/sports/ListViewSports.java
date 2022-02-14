@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -57,19 +59,18 @@ public class ListViewSports extends AppCompatActivity {
         categoryTV.setText(category);
         myRef = database.getReference(category);
 
-
-    /*
+/*
         list = new ArrayList<>();
-        list.add(new Item("Dubai's tennis", "Dubai", "Weekdays", "08:00 - 18:00", R.drawable.tennisdubai, false));
-        list.add(new Item("Tennis courts", "Holland", "Monday - Saturday", "05:30 - 23:00", R.drawable.tennisholand, false));
-        list.add(new Item("Tennis's place", "India", "Weekdays", "06:00 - 00:00", R.drawable.tennisindia, false));
-        list.add(new Item("Courts", "Israel", "Sunday - Friday", "04:30 - 19:00", R.drawable.tennisisrael, false));
+        list.add(new Item("China's soccer", "China", "Weekdays", "08:00 - 18:00", R.drawable.soccerchina, false));
+        list.add(new Item("Soccer courts", "Italy", "Monday - Saturday", "05:30 - 23:00", R.drawable.socceritaly, false));
+        list.add(new Item("Soccer's place", "London", "Weekdays", "06:00 - 00:00", R.drawable.soccerlondon, false));
+        list.add(new Item("Courts", "Turkey", "Sunday - Friday", "04:30 - 19:00", R.drawable.soccerturkey, false));
 
 
-        myRef.push().setValue(new Item("Dubai's tennis", "Dubai", "Weekdays", "08:00 - 18:00", R.drawable.tennisdubai, false));
-        myRef.push().setValue(new Item("Tennis courts", "Holland", "Monday - Saturday", "05:30 - 23:00", R.drawable.tennisholand, false));
-        myRef.push().setValue(new Item("Tennis's place", "India", "Weekdays", "06:00 - 00:00", R.drawable.tennisindia, false));
-        myRef.push().setValue(new Item("Courts", "Israel", "Sunday - Friday", "04:30 - 19:00", R.drawable.tennisisrael, false));
+        myRef.push().setValue(new Item("China's soccer", "China", "Weekdays", "08:00 - 18:00", R.drawable.soccerchina, false));
+        myRef.push().setValue(new Item("Soccer courts", "Italy", "Monday - Saturday", "05:30 - 23:00", R.drawable.socceritaly, false));
+        myRef.push().setValue(new Item("Soccer's place", "London", "Weekdays", "06:00 - 00:00", R.drawable.soccerlondon, false));
+        myRef.push().setValue(new Item("Courts", "Turkey", "Sunday - Friday", "04:30 - 19:00", R.drawable.soccerturkey, false));
 */
 
         //reference to the list view so it can programmed
@@ -108,6 +109,7 @@ public class ListViewSports extends AppCompatActivity {
                 }
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -115,6 +117,40 @@ public class ListViewSports extends AppCompatActivity {
         });
     }
 
+    @Override
+    //inflate the design of the required menu on top of the activity
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_listview, menu);
+
+        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                return false;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                return false;
+            }
+
+        };
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.favorite:
+                Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(this, FavoriteActivity.class);
+                startActivity(intent1);
+                break;
 
 
-}
+
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    }

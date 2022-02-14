@@ -50,23 +50,24 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
         adapter = new MyAdapter(this, titles, mImages);
 
+        mImages.add(R.drawable.tennis);
+        mImages.add(R.drawable.soccer);
         mImages.add(R.drawable.running);
         mImages.add(R.drawable.boxing);
         mImages.add(R.drawable.basketball);
         mImages.add(R.drawable.skiing);
-        mImages.add(R.drawable.soccer);
         mImages.add(R.drawable.surfing);
         mImages.add(R.drawable.swimming);
-        mImages.add(R.drawable.tennis);
 
+        titles.add("Tennis");
+        titles.add("Soccer");
         titles.add("Running");
         titles.add("Boxing");
         titles.add("BasketBall");
         titles.add("Skiing");
-        titles.add("Soccer");
         titles.add("Surfing");
         titles.add("Swimming");
-        titles.add("Tennis");
+
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
         mRecycleView.setLayoutManager(gridLayoutManager);
@@ -120,7 +121,8 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
                 startActivity(intent2);
                 break;
             case R.id.itemProfile:
-
+                Intent intent3 = new Intent(this, ProfileActivity.class);
+                startActivity(intent3);
         }
         return super.onOptionsItemSelected(item);
 

@@ -1,5 +1,6 @@
 package com.example.sports;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -18,6 +26,9 @@ public class FavoriteActivity extends AppCompatActivity {
     private CustomAdapter myAdapter;
     //object containing the items to be displayed - Data
     private ArrayList<Item> list;
+    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
+    private FirebaseDatabase database=FirebaseDatabase.getInstance("https://sports-931b0-default-rtdb.europe-west1.firebasedatabase.app/");
+    private DatabaseReference myRef;
 
 
     @Override
@@ -25,11 +36,15 @@ public class FavoriteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
 
+        String UID = maFirebaseAuth.getUid();
+        myRef = database.getReference("favourites/"+UID);
+
+
         list = new ArrayList<>();
-        list.add(new Item("China's Soccer", "China", "Weekdays", "8:00 - 18:00", R.drawable.soccerchina, true));
+        /*list.add(new Item("China's Soccer", "China", "Weekdays", "8:00 - 18:00", R.drawable.soccerchina, true));
         list.add(new Item("Soccer courts", "Italy", "Monday - Saturday", "05:30 - 23:00", R.drawable.socceritaly, true));
         list.add(new Item("Soccer's place", "London", "Weekdays", "6:00 - 00:00", R.drawable.soccerlondon, true));
-
+*/
 
 
         //reference to the list view so it can programmed
@@ -41,6 +56,23 @@ public class FavoriteActivity extends AppCompatActivity {
         //connect adapter with view
         myListView.setAdapter(myAdapter);
 
+
+        //Read from FB
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    Item item=dataSnapshot.getValue(Item.class);
+                    list.add(item);
+                    myAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         //connects click listener to items in the
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

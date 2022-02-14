@@ -14,11 +14,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 public class CustomAdapter extends ArrayAdapter<Item> {
     private Context context;
     private int resource;
+    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
+    private FirebaseDatabase database=FirebaseDatabase.getInstance("https://sports-931b0-default-rtdb.europe-west1.firebasedatabase.app/");
+    private DatabaseReference myRef;
 
     public CustomAdapter(@NonNull Context context, int resource, @NonNull List<Item> objects) {
         super(context, resource, objects);
@@ -40,12 +47,16 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             TextView textLocation = view.findViewById(R.id.textLocation);
             TextView textDays = view.findViewById(R.id.textDays);
             TextView textHours = view.findViewById(R.id.textHours);
-            ImageButton itemButton = view.findViewById(R.id.buttonFavorite);
+            ImageButton starButton = view.findViewById(R.id.buttonFavorite);
             ImageButton itemMassage = view.findViewById(R.id.buttonMassage);
-            itemButton.setOnClickListener(new View.OnClickListener() { //to the add button
+            starButton.setOnClickListener(new View.OnClickListener() { //to the add button
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(context, "this item was added to shopping cart", Toast.LENGTH_SHORT).show();
+                    String UID =maFirebaseAuth.getUid();
+                    myRef =database.getReference("favourites/"+UID);
+                    myRef.push().setValue(item);
+                    starButton.setImageResource(R.drawable.fill_star);
+                    Toast.makeText(context, "This item was added to favourites", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -54,7 +65,7 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             textDays.setText(item.getDays());
             textHours.setText(item.getHours());
             imageView.setImageResource(item.getImage());
-            itemButton.setImageResource(R.drawable.star_icon);
+            starButton.setImageResource(R.drawable.star_icon);
             itemMassage.setImageResource(R.drawable.massage_icon);
         }
         return view;
