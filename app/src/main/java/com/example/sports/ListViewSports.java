@@ -3,13 +3,17 @@ package com.example.sports;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +36,9 @@ public class ListViewSports extends AppCompatActivity {
     private CustomAdapter myAdapter;
     //object containing the items to be displayed - Data
     private ArrayList<Item> list;
+
+    private ArrayList<Item> backup;
+
 
     //get instance of authentication project in FB console
     //gets the root of the real time database in the FB console
@@ -76,6 +83,9 @@ public class ListViewSports extends AppCompatActivity {
         //reference to the list view so it can programmed
         myListView = findViewById(R.id.myListView);
 
+
+
+
         //connect adapter with data
         myAdapter = new CustomAdapter(this, R.layout.sport_row,list);
 
@@ -97,6 +107,8 @@ public class ListViewSports extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
 
         myRef.addValueEventListener(new ValueEventListener() {
@@ -133,6 +145,8 @@ public class ListViewSports extends AppCompatActivity {
                 return false;
             }
 
+
+
         };
         return super.onCreateOptionsMenu(menu);
     }
@@ -152,5 +166,14 @@ public class ListViewSports extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-
+    public void search(String toSearch){
+        backup = new ArrayList<>(list);
+        for(Item item: backup){
+            if(!item.getName().equals("toSearch"))
+            {
+                backup.remove(item);
+                myAdapter.notifyDataSetChanged();
+            }
+        }
     }
+}
