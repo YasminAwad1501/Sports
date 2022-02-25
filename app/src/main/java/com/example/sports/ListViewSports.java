@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewSports extends AppCompatActivity {
 
@@ -47,6 +48,7 @@ public class ListViewSports extends AppCompatActivity {
     private FirebaseDatabase database=FirebaseDatabase.getInstance("https://sports-931b0-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference myRef;
     private TextView categoryTV;
+    private String searchView;
 
 
 
@@ -59,6 +61,8 @@ public class ListViewSports extends AppCompatActivity {
 
         //adds an item to the firebase under the referenced specified
         categoryTV = findViewById(R.id.category);
+
+
 
         list = new ArrayList<>();
         String UID = maFirebaseAuth.getUid();
@@ -133,7 +137,28 @@ public class ListViewSports extends AppCompatActivity {
     //inflate the design of the required menu on top of the activity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_listview, menu);
+       /* MenuItem menuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint("search");
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+
+                return false;
+            }
+        });
+    */
+
+
+        return super.onCreateOptionsMenu(menu);
+
+      /*
         MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem menuItem) {
@@ -144,11 +169,11 @@ public class ListViewSports extends AppCompatActivity {
             public boolean onMenuItemActionCollapse(MenuItem menuItem) {
                 return false;
             }
+        */
 
 
 
-        };
-        return super.onCreateOptionsMenu(menu);
+
     }
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -159,6 +184,7 @@ public class ListViewSports extends AppCompatActivity {
                 Intent intent1 = new Intent(this, FavoriteActivity.class);
                 startActivity(intent1);
                 break;
+            case R.id.search:
 
 
 
@@ -166,12 +192,15 @@ public class ListViewSports extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-    public void search(String toSearch){
-        backup = new ArrayList<>(list);
+
+
+
+        public void search(String toSearch){
+        ArrayList<Item> backup = new ArrayList<>();
         for(Item item: backup){
-            if(!item.getName().equals("toSearch"))
+            if(item.getName().equals(toSearch))
             {
-                backup.remove(item);
+                backup.add(item);
                 myAdapter.notifyDataSetChanged();
             }
         }

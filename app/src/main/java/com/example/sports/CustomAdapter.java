@@ -69,7 +69,8 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             itemMassage.setImageResource(R.drawable.massage_icon);
         }
         return view;
-
-
     }
+
+
+
 }
