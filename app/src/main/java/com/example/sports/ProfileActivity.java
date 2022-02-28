@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.FileNotFoundException;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private Button buttonCamera, buttonGallery;
     private ImageView imageViewProfile;
 
+    //todo: private FirebaseAuth mAuth;
 
     //for picture of camera
     private Bitmap picture;
@@ -40,6 +43,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonGallery.setOnClickListener(this);
 
         imageViewProfile = findViewById(R.id.imageViewProfile);
+
+
     }
 
 

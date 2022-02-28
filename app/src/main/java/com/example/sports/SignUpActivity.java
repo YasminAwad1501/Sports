@@ -22,12 +22,14 @@ public class SignUpActivity extends AppCompatActivity {
     private static final String TAG = "FIREBASE";
     private EditText editTextName, editTextUsername, editTextPassword, editTextPhoneNumber;
     private Button buttonSignUp;
+    //TODO: private Button itemProfile;
     private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        //TODO: itemProfile=findViewById(R.id.itemProfile);
         editTextName=findViewById(R.id.editTextName);
         editTextUsername=findViewById(R.id.editTextEmail);
         editTextPassword=findViewById(R.id.editTextPassword);
@@ -67,7 +69,15 @@ public class SignUpActivity extends AppCompatActivity {
     public void submit(View view){
 
     }
+/*
 
+    public void Profile(View view) {
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+
+    }
+*/
 
     public void Signup(View view) {
         Signup(editTextUsername.getText().toString(), editTextPassword.getText().toString());

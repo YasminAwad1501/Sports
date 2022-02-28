@@ -17,20 +17,21 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:padding="10dp"
-            android:src="@drawable/logo"  />
+            android:src="@drawable/logo" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="220dp"
-        android:layout_height="520dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="101dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:background="@drawable/shape_right_panel"
         app:layout_constraintBottom_toBottomOf="parent"
-         >
+        app:layout_constraintRight_toRightOf="parent">
+
 
     </RelativeLayout>
 
@@ -49,6 +50,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rlHeader">
 
+       <!-- <Button
+            android:id="@+id/itemProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:onClick="Profile"
+            android:title="profile"
+            android:icon="@drawable/ic_profile_account"
+            app:showAsAction="ifRoom|collapseActionView"/>
+        -->
         <EditText
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
@@ -85,7 +96,9 @@
             android:text="SignUp"
             android:textColor="@android:color/white"
             tools:layout_editor_absoluteX="38dp"
-            tools:layout_editor_absoluteY="547dp" />
+            tools:layout_editor_absoluteY="547dp"
+            android:layout_marginBottom="50dp"/>
+
 
     </LinearLayout>
 
