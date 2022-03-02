@@ -17,11 +17,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "FIREBASE";
     private EditText editTextName, editTextUsername, editTextPassword, editTextPhoneNumber;
-    private Button buttonSignUp;
+    private Button buttonSignUp, itemProfile;
     //TODO: private Button itemProfile;
     private FirebaseAuth mAuth;
 
@@ -29,12 +29,17 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        //TODO: itemProfile=findViewById(R.id.itemProfile);
+
+        itemProfile=findViewById(R.id.itemProfile);
+        itemProfile.setOnClickListener(this);
+
         editTextName=findViewById(R.id.editTextName);
         editTextUsername=findViewById(R.id.editTextEmail);
         editTextPassword=findViewById(R.id.editTextPassword);
         editTextPhoneNumber=findViewById(R.id.editTextPhone);
         buttonSignUp=findViewById(R.id.buttonLogin);
+
+
 
         mAuth = FirebaseAuth.getInstance();
     }
@@ -66,21 +71,19 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
-    public void submit(View view){
 
-    }
-/*
 
-    public void Profile(View view) {
-
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-
-    }
-*/
 
     public void Signup(View view) {
-        Signup(editTextUsername.getText().toString(), editTextPassword.getText().toString());
+        if (!editTextUsername.getText().toString().equals("") &&
+                !editTextPassword.getText().toString().equals("")) {
+            Signup(editTextUsername.getText().toString(), editTextPassword.getText().toString());
+        }
+    }
 
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
     }
 }

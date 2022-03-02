@@ -17,12 +17,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SportsActivity extends AppCompatActivity  implements DialogInterface.OnClickListener {
 
@@ -79,6 +86,8 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         mRecycleView.setAdapter(adapter);
 
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        //TODO: setSupportActionBar(toolbar);
     }
 
 
@@ -93,6 +102,25 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
     //inflate the design of the required menu on top of the activity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.itemProfile);
+        View view = MenuItemCompat.getActionView(menuItem);
+
+        CircleImageView profileImage = view.findViewById(R.id.toolbar_profile_image);
+
+        Glide
+                .with(this)
+                .load("https://www.unigreet.com/wp-content/uploads/2020/04/Smiley-816x1024.jpg")
+                .into(profileImage);
+
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(SportsActivity.this,"Profile Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
             @Override
