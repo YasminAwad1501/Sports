@@ -3,7 +3,7 @@
     package="com.example.sports">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,7 +32,9 @@
             android:exported="true" />
         <activity
             android:name=".SportsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />

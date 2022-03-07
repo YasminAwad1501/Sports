@@ -17,8 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -87,7 +87,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        //TODO: setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
     }
 
 
@@ -104,9 +104,11 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
         getMenuInflater().inflate(R.menu.menu, menu);
 
         MenuItem menuItem = menu.findItem(R.id.itemProfile);
-        View view = MenuItemCompat.getActionView(menuItem);
+        menuItem.setActionView(R.layout.activity_sports);
 
-        CircleImageView profileImage = view.findViewById(R.id.toolbar_profile_image);
+        final View view = MenuItemCompat.getActionView(menuItem);
+
+        CircleImageView profileImage = (CircleImageView) view.findViewById(R.id.toolbar_profile_image);
 
         Glide
                 .with(this)

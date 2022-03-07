@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    xmlns:android="http://schemas.android.com/apk/res/android"
 
-    >
     <item
         android:id="@+id/favorite"
         android:title="Favorite" />
@@ -14,9 +12,10 @@
     <item
     android:id="@+id/itemProfile"
     android:title="profile"
-    android:icon="@drawable/ic_profile_account"
-    app:showAsAction="always"
-    android:actionLayout="@layout/profile_menu_layout"
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="collapseActionView|ifRoom"
+    app:actionLayout="@layout/profile_menu_layout"
+        app:actionViewClass="de.hdodenhof.circleimageview.CircleImageView"
     />
 
 
