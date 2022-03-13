@@ -12,10 +12,9 @@
     <item
     android:id="@+id/itemProfile"
     android:title="profile"
-        android:icon="@mipmap/ic_launcher"
-        app:showAsAction="collapseActionView|ifRoom"
-    app:actionLayout="@layout/profile_menu_layout"
-        app:actionViewClass="de.hdodenhof.circleimageview.CircleImageView"
+    android:icon="@drawable/ic_profile_account"
+    app:showAsAction="collapseActionView|ifRoom"
+
     />
 
 

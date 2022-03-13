@@ -60,7 +60,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             mTextview = itemView.findViewById(R.id.textview);
             itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                     Toast.makeText(itemView.getContext(), "CLICKED:"+mTextview.getText(), Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(itemView.getContext(), ListViewSports.class);
                     intent.putExtra("category",mTextview.getText());

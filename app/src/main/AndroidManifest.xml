@@ -33,7 +33,6 @@
         <activity
             android:name=".SportsActivity"
             android:exported="true"
-            android:theme="@style/AppTheme"
             />
         <activity
             android:name=".SignUpActivity"

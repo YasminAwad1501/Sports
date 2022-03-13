@@ -18,7 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CustomAdapter extends ArrayAdapter<Item> {
     private Context context;
@@ -27,10 +29,29 @@ public class CustomAdapter extends ArrayAdapter<Item> {
     private FirebaseDatabase database=FirebaseDatabase.getInstance("https://sports-931b0-default-rtdb.europe-west1.firebasedatabase.app/");
     private DatabaseReference myRef;
 
+    private List<Item> objects;
+    private ArrayList<Item> arrayList;
+
+    public int getCount(){
+        return objects.size();
+    }
+
+    public Item getItem(int position){
+        return objects.get(position);
+    }
+
+    public long getItemId(int position){
+        return position;
+    }
+
     public CustomAdapter(@NonNull Context context, int resource, @NonNull List<Item> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;//this is the item row resource
+
+        this.objects = objects;
+        this.arrayList = new ArrayList<>();
+        this.arrayList.addAll(objects);
     }
 
     @NonNull
@@ -69,6 +90,20 @@ public class CustomAdapter extends ArrayAdapter<Item> {
             itemMassage.setImageResource(R.drawable.massage_icon);
         }
         return view;
+    }
+
+    public void filter(String s){
+        s=s.toLowerCase(Locale.getDefault());
+        objects.clear();
+        if (s.length()==0)
+            objects.addAll(arrayList);
+        else {
+            for (Item item: arrayList){
+                if (item.getName().toLowerCase(Locale.getDefault()).contains(s))
+                    objects.add(item);
+            }
+        }
+        notifyDataSetChanged();
     }
 
 

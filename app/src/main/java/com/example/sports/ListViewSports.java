@@ -137,9 +137,10 @@ public class ListViewSports extends AppCompatActivity {
     //inflate the design of the required menu on top of the activity
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_listview, menu);
-       /* MenuItem menuItem = menu.findItem(R.id.search);
+        MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setQueryHint("search");
+        searchView.setQueryHint("Type here to search");
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -149,27 +150,14 @@ public class ListViewSports extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-
+                myAdapter.filter(s);
                 return false;
             }
+
         });
-    */
 
+        return true;
 
-        return super.onCreateOptionsMenu(menu);
-
-      /*
-        MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
-            @Override
-            public boolean onMenuItemActionExpand(MenuItem menuItem) {
-                return false;
-            }
-
-            @Override
-            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-                return false;
-            }
-        */
 
 
 
