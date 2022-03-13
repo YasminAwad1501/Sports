@@ -7,6 +7,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -90,11 +91,7 @@ public class ListViewSports extends AppCompatActivity {
 
 
 
-        //connect adapter with data
-        myAdapter = new CustomAdapter(this, R.layout.sport_row,list);
 
-        //connect adapter with view
-        myListView.setAdapter(myAdapter);
 
         //connects click listener to items in the
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -121,7 +118,12 @@ public class ListViewSports extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     Item item=dataSnapshot.getValue(Item.class);
                     list.add(item);
-                    myAdapter.notifyDataSetChanged();
+
+                    //connect adapter with data
+                    myAdapter = new CustomAdapter(getApplicationContext(), R.layout.sport_row,list);
+
+                    //connect adapter with view
+                    myListView.setAdapter(myAdapter);
                 }
             }
 
