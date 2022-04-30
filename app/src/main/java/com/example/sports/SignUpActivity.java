@@ -21,7 +21,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     private static final String TAG = "FIREBASE";
     private EditText editTextName, editTextUsername, editTextPassword, editTextPhoneNumber;
-    private Button buttonSignUp, itemProfile;
+    private Button buttonSignUp;
     //TODO: private Button itemProfile;
     private FirebaseAuth mAuth;
 
@@ -30,8 +30,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        itemProfile=findViewById(R.id.itemProfile);
-        itemProfile.setOnClickListener(this);
+
 
         editTextName=findViewById(R.id.editTextName);
         editTextUsername=findViewById(R.id.editTextEmail);

@@ -3,10 +3,11 @@
     package="com.example.sports">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_sports_basketball"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -17,8 +18,8 @@
 
         <service
             android:name=".NotificationIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="false" />
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
             android:name=".MusicService"
             android:enabled="true"
@@ -32,8 +33,7 @@
             android:exported="true" />
         <activity
             android:name=".SportsActivity"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
             android:exported="true" />
