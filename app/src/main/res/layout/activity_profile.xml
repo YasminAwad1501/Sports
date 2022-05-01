@@ -19,8 +19,8 @@
     <RelativeLayout
         android:id="@+id/rlHeader"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,43 +30,42 @@
             android:id="@+id/imageViewProfile"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginTop="30dp"
             android:padding="10dp"
             android:src="@drawable/logo" />
+    </RelativeLayout>
 
-        <Button
-            android:id="@+id/buttonGallery"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/shape_login_button"
-            android:text="Open Gallery" />
+    <RelativeLayout
+        android:id="@+id/rlButtons"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="230dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/buttonCamera"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/shape_login_button"
             android:text="Take Picture" />
-    </RelativeLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/rlBody"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        <Button
+            android:id="@+id/buttonGallery"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/shape_login_button"
+            android:gravity="center"
+            android:text="Open Gallery" />
 
     </RelativeLayout>
+
+
 
 </RelativeLayout>

@@ -14,9 +14,6 @@
     android:title="profile"
     android:icon="@drawable/ic_profile_account"
     app:showAsAction="collapseActionView|ifRoom"
-
     />
-
-
 
 </menu>

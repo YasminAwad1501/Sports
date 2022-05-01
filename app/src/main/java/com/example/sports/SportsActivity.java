@@ -82,7 +82,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
         mRecycleView.setAdapter(adapter);
 
-        Toast.makeText(this, "Haneen", Toast.LENGTH_SHORT).show();
+
 
 
     }
@@ -90,7 +90,7 @@ public class SportsActivity extends AppCompatActivity  implements DialogInterfac
 
     public void Profile(View view) {
 
-        Intent intent = new Intent(this, ProfileDetailsActivity.class);
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
 
     }
